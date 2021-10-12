@@ -1,0 +1,26 @@
+<view> {{access_token}}
+  <view>{{dduser.name}}</view>
+  <button type="ghost" onTap='getCDlog'>获取禅道记录  {{getCDRES}}</button>
+  <view>已完成：{{logdata.done.length}}，进行中：{{logdata.doing.length}}，未开始：{{logdata.next.length}}</view>
+  <view></view>
+  <view></view>
+
+  <view>已完成：
+    <view a:for="{{logdata.done}}">
+     {{item['c-name']}}
+    </view>
+  </view>
+  <view>进行中：
+    <view a:for="{{logdata.doing}}">
+     {{item['c-name']}}
+    </view>
+  </view>
+  <view>未开始：
+    <view a:for="{{logdata.next}}">
+     {{item['c-name']}}
+    </view>
+  </view>
+  <button type="ghost" onTap='createLog' disabled={{getCDRES!=='success'}}>创建日志</button>
+
+
+</view>
